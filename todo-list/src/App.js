@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Todos from './todos';
+import Todos from './todos/todos';
 
 class App extends Component {
   state = {
@@ -9,11 +9,19 @@ class App extends Component {
       {id: 2, content: 'test2'}
     ]
   }
+  deleteTodo = (id) => {
+    const todos = this.state.todos.filter(todo => {
+      return todo.id !== id;
+    });
+    this.setState({
+      todos
+    });
+  };
   render() {
     return (
       <div className="todo-app container">
         <h1 className='center blue-text'>Todo's</h1>
-        <Todos todos={this.state.todos} />
+        <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />
       </div>
     );
   }

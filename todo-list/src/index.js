@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'materialize-css/dist/css/materialize.min.css';
+import 'material-icons/iconfont/material-icons.css';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
